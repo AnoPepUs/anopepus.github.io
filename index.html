@@ -1,9 +1,226 @@
 <!DOCTYPE html>
-<html>
-<head><title>Anopepus</title></head>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnoPepUs - Récompense</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            color: white;
+            overflow: hidden;
+            background: #000;
+        }
+        .background {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: -1;
+        }
+        .background img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .title {
+            font-size: 3rem;
+            color: #FFD700;
+            margin-bottom: 5px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+        .subtitle {
+            font-size: 1.3rem;
+            color: #FFD700;
+            margin-bottom: 15px;
+        }
+        .content {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            width: 95%;
+            max-width: 1100px;
+            gap: 30px;
+        }
+        .left-panel { flex: 1; text-align: left; }
+        .text-section p { font-size: 0.95rem; margin: 6px 0; color: #ccc; }
+        .highlight { color: #FFD700; font-weight: bold; }
+        .bat-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 10px 0;
+        }
+        .bat-logo { width: 55px; animation: pulse 2s infinite; }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        .bat-text { font-size: 0.9rem; color: #ccc; }
+        .button-brave {
+            background: linear-gradient(135deg, #FF4500, #FF6B35);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s;
+            box-shadow: 0 0 15px rgba(255, 69, 0, 0.5);
+            margin-top: 10px;
+        }
+        .button-brave img { width: 28px; height: 28px; }
+        .button-brave:hover {
+            box-shadow: 0 0 25px rgba(255, 69, 0, 0.9);
+            transform: scale(1.03);
+        }
+        .right-panel {
+            flex: 0 0 320px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+        .nav-buttons { display: flex; gap: 20px; justify-content: center; }
+        .button-site {
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            transition: transform 0.3s;
+        }
+        .button-site:hover { transform: scale(1.08); }
+        .button-site img {
+            width: 75px; height: 75px;
+            border-radius: 50%;
+            border: 2px solid #FFD700;
+            box-shadow: 0 0 12px rgba(255, 215, 0, 0.6);
+            object-fit: cover;
+        }
+        .button-site span {
+            color: #FFD700;
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-align: center;
+            max-width: 90px;
+        }
+        .screens-section {
+            display: flex;
+            gap: 20px;
+            align-items: flex-end;
+            margin-top: 5px;
+        }
+        .screen-wrapper { display: flex; flex-direction: column; align-items: center; }
+        .screen-frame {
+            background: #0a0a0a;
+            border: 3px solid #444;
+            border-radius: 8px 8px 0 0;
+            padding: 4px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.9), 0 0 8px rgba(100,100,255,0.2);
+            width: 130px;
+        }
+        .screen-frame a img {
+            width: 100%; height: 80px;
+            object-fit: cover;
+            border-radius: 4px;
+            display: block;
+            transition: opacity 0.3s;
+        }
+        .screen-frame a img:hover { opacity: 0.75; }
+        .screen-neck { width: 35px; height: 10px; background: #555; }
+        .screen-base { width: 80px; height: 6px; background: #444; border-radius: 3px; }
+        .screen-label { font-size: 0.7rem; color: #aaa; margin-top: 5px; }
+    </style>
+</head>
 <body>
-<h1>Bienvenue</h1>
-<p><a href="https://anopepus.github.io/Chasse-au-tresor/">Chasse au Trésor Crypto</a></p>
-<p><a href="https://anopepus.github.io/Crypto-pour-les-Nuls/">Crypto pour les Nuls</a></p>
+
+<div class="background">
+    <img src="https://i.postimg.cc/PrMHVjnp/the-bureau.gif" alt="Fond animé" />
+</div>
+
+<div class="container">
+    <h1 class="title">✨ AnoPepUs ✨</h1>
+    <h2 class="subtitle">🦋 Merci pour votre soutien !</h2>
+
+    <div class="content">
+
+        <div class="left-panel">
+            <div class="text-section">
+                <p><span class="highlight">✨ MERCI POUR VOTRE BASIC ATTENTION TOKEN !</span></p>
+                <p>Bienvenue dans l'univers d'Anopepus !</p>
+                <p>Je suis ce créateur un peu fou qui t'explique la crypto sans te prendre la tête,
+                et qui t'envoie chasser des trésors numériques aux quatre coins du globe.</p>
+                <p>Entre deux énigmes et trois bougies japonaises, je survis grâce à votre soutien. 😄</p>
+                <p>Chaque BAT reçu finance la prochaine énigme... ou mon café. Probablement les deux. ☕🗺️</p>
+            </div>
+
+            <div class="bat-row">
+                <img src="https://i.postimg.cc/hjbFg0P8/bat_logo.png" class="bat-logo" />
+                <span class="bat-text">👆 Clique sur le logo BAT<br>dans ta barre Brave pour soutenir !</span>
+            </div>
+
+            <a href="https://publishers.basicattentiontoken.org/c/ud1qYZmcWy" target="_blank" class="button-brave">
+                <img src="https://i.postimg.cc/RF9z4StX/Brave.png" alt="Brave" />
+                🦁 Faire un don via Brave Creators
+            </a>
+        </div>
+
+        <div class="right-panel">
+            <div class="nav-buttons">
+                <a href="https://anopepus.github.io/Crypto-pour-les-Nuls/" class="button-site">
+                    <img src="https://i.postimg.cc/qMC792VP/papillon.gif" alt="Crypto pour les Nuls" />
+                    <span>📚 Retour à<br>Crypto-pour-les-Nuls</span>
+                </a>
+                <a href="https://anopepus.github.io/Chasse-au-tresor/" class="button-site">
+                    <img src="https://i.postimg.cc/1XLDzBGs/terre_tourne.gif" alt="Chasse au trésor" />
+                    <span>🗺️ Retour à<br>Chasse-au-trésor</span>
+                </a>
+            </div>
+
+            <div class="screens-section">
+                <div class="screen-wrapper">
+                    <div class="screen-frame">
+                        <a href="https://www.dailymotion.com/user/AnoPepUs" target="_blank">
+                            <img src="https://i.postimg.cc/bvXKthLT/dailymotion.gif" alt="DailyMotion" />
+                        </a>
+                    </div>
+                    <div class="screen-neck"></div>
+                    <div class="screen-base"></div>
+                    <div class="screen-label">DailyMotion</div>
+                </div>
+
+                <div class="screen-wrapper">
+                    <div class="screen-frame">
+                        <a href="https://mastodon.social/@AnoPepUs" target="_blank">
+                            <img src="https://i.postimg.cc/fb469N5v/masodon.gif" alt="Mastodon" />
+                        </a>
+                    </div>
+                    <div class="screen-neck"></div>
+                    <div class="screen-base"></div>
+                    <div class="screen-label">Mastodon</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
 </body>
 </html>
