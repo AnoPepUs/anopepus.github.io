@@ -1,1 +1,4 @@
+This is a Brave Rewards publisher verification file.
 
+Domain: anopepus.github.io
+Token: 38d67e2d-c625-4fa7-9ad2-8aa672c5e2bc
