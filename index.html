@@ -7,8 +7,7 @@
     <link rel="shortcut icon" href="https://i.postimg.cc/hjbFg0P8/bat_logo.png" type="image/png">
     <style>
         body {
-            margin: 0;
-            padding: 0;
+            margin: 0; padding: 0;
             font-family: 'Arial', sans-serif;
             color: white;
             overflow: hidden;
@@ -35,17 +34,8 @@
             padding: 20px;
             box-sizing: border-box;
         }
-        .title {
-            font-size: 3rem;
-            color: #FFD700;
-            margin-bottom: 5px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
-        }
-        .subtitle {
-            font-size: 1.3rem;
-            color: #FFD700;
-            margin-bottom: 15px;
-        }
+        .title { font-size: 3rem; color: #FFD700; margin-bottom: 5px; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); }
+        .subtitle { font-size: 1.3rem; color: #FFD700; margin-bottom: 15px; }
         .content {
             display: flex;
             align-items: flex-start;
@@ -57,97 +47,144 @@
         .left-panel { flex: 1; text-align: left; }
         .text-section p { font-size: 0.95rem; margin: 6px 0; color: #ccc; }
         .highlight { color: #FFD700; font-weight: bold; }
-        .bat-row {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin: 10px 0;
-        }
+        .bat-row { display: flex; align-items: center; gap: 12px; margin: 10px 0; }
         .bat-logo { width: 55px; animation: pulse 2s infinite; }
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
-        }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
         .bat-text { font-size: 0.9rem; color: #ccc; }
         .button-brave {
             background: linear-gradient(135deg, #FF4500, #FF6B35);
-            color: white;
-            padding: 12px 20px;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: bold;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            transition: all 0.3s;
-            box-shadow: 0 0 15px rgba(255, 69, 0, 0.5);
-            margin-top: 10px;
+            color: white; padding: 12px 20px; border-radius: 8px;
+            font-size: 1rem; font-weight: bold; cursor: pointer;
+            text-decoration: none; display: inline-flex;
+            align-items: center; gap: 10px; transition: all 0.3s;
+            box-shadow: 0 0 15px rgba(255, 69, 0, 0.5); margin-top: 10px;
         }
         .button-brave img { width: 28px; height: 28px; }
-        .button-brave:hover {
-            box-shadow: 0 0 25px rgba(255, 69, 0, 0.9);
-            transform: scale(1.03);
-        }
+        .button-brave:hover { box-shadow: 0 0 25px rgba(255, 69, 0, 0.9); transform: scale(1.03); }
         .right-panel {
             flex: 0 0 320px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
+            display: flex; flex-direction: column;
+            align-items: center; gap: 15px;
         }
         .nav-buttons { display: flex; gap: 20px; justify-content: center; }
-        .button-site {
-            text-decoration: none;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 6px;
-            transition: transform 0.3s;
-        }
+        .button-site { text-decoration: none; display: flex; flex-direction: column; align-items: center; gap: 6px; transition: transform 0.3s; }
         .button-site:hover { transform: scale(1.08); }
-        .button-site img {
-            width: 75px; height: 75px;
-            border-radius: 50%;
-            border: 2px solid #FFD700;
-            box-shadow: 0 0 12px rgba(255, 215, 0, 0.6);
-            object-fit: cover;
-        }
-        .button-site span {
-            color: #FFD700;
-            font-size: 0.75rem;
-            font-weight: bold;
-            text-align: center;
-            max-width: 90px;
-        }
-        .screens-section {
-            display: flex;
-            gap: 20px;
-            align-items: flex-end;
-            margin-top: 5px;
-        }
+        .button-site img { width: 75px; height: 75px; border-radius: 50%; border: 2px solid #FFD700; box-shadow: 0 0 12px rgba(255, 215, 0, 0.6); object-fit: cover; }
+        .button-site span { color: #FFD700; font-size: 0.75rem; font-weight: bold; text-align: center; max-width: 90px; }
+        .screens-section { display: flex; gap: 20px; align-items: flex-end; margin-top: 5px; }
         .screen-wrapper { display: flex; flex-direction: column; align-items: center; }
-        .screen-frame {
-            background: #0a0a0a;
-            border: 3px solid #444;
-            border-radius: 8px 8px 0 0;
-            padding: 4px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.9), 0 0 8px rgba(100,100,255,0.2);
-            width: 130px;
-        }
-        .screen-frame a img {
-            width: 100%; height: 80px;
-            object-fit: cover;
-            border-radius: 4px;
-            display: block;
-            transition: opacity 0.3s;
-        }
+        .screen-frame { background: #0a0a0a; border: 3px solid #444; border-radius: 8px 8px 0 0; padding: 4px; box-shadow: 0 0 20px rgba(0,0,0,0.9), 0 0 8px rgba(100,100,255,0.2); width: 130px; }
+        .screen-frame a img { width: 100%; height: 80px; object-fit: cover; border-radius: 4px; display: block; transition: opacity 0.3s; }
         .screen-frame a img:hover { opacity: 0.75; }
         .screen-neck { width: 35px; height: 10px; background: #555; }
         .screen-base { width: 80px; height: 6px; background: #444; border-radius: 3px; }
         .screen-label { font-size: 0.7rem; color: #aaa; margin-top: 5px; }
+
+        /* ===== CYBERPUNK BOUTON ===== */
+        .cyber-trigger {
+            position: fixed;
+            top: 70px;
+            right: 15px;
+            z-index: 500;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .cyber-trigger:hover { transform: scale(1.1); }
+        .cyber-trigger img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 2px solid #FFD700;
+            box-shadow: 0 0 12px rgba(255,215,0,0.5);
+            object-fit: cover;
+            display: block;
+        }
+        .cyber-trigger-label {
+            font-size: 0.6rem;
+            color: #FFD700;
+            text-align: center;
+            margin-top: 3px;
+            text-shadow: 0 0 6px rgba(255,215,0,0.6);
+        }
+
+        /* ===== MODAL ===== */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 9999;
+            justify-content: flex-end;
+            align-items: flex-start;
+            padding: 70px 15px 0 0;
+            box-sizing: border-box;
+        }
+        .modal-overlay.active { display: flex; }
+        .modal-box {
+            background: linear-gradient(135deg, #0a0f1e, #0B1A2E);
+            border: 2px solid #FFD700;
+            border-radius: 14px;
+            padding: 20px 22px;
+            max-width: 320px;
+            width: 100%;
+            position: relative;
+            box-shadow: 0 0 30px rgba(255,215,0,0.3);
+            animation: slideIn 0.3s ease;
+        }
+        @keyframes slideIn { from { transform: translateX(20px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+        .modal-close {
+            position: absolute;
+            top: 10px; right: 14px;
+            font-size: 1.3em;
+            cursor: pointer;
+            color: #FFD700;
+            background: none;
+            border: none;
+            line-height: 1;
+        }
+        .modal-close:hover { color: white; }
+        .modal-dame {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 14px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255,215,0,0.3);
+        }
+        .modal-dame img {
+            width: 45px; height: 45px;
+            border-radius: 50%;
+            border: 2px solid #FFD700;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+        .modal-dame-title {
+            font-size: 0.85em;
+            font-weight: bold;
+            color: #FFD700;
+            text-align: left;
+        }
+        .modal-content p {
+            font-size: 0.85em;
+            color: #ddd;
+            line-height: 1.6;
+            margin: 8px 0;
+            text-align: left;
+        }
+        .modal-content a { color: #FFD700; }
+        .modal-content a:hover { color: white; }
+        .modal-highlight {
+            background: rgba(255,215,0,0.08);
+            border: 1px solid rgba(255,215,0,0.3);
+            border-radius: 8px;
+            padding: 10px 12px;
+            margin-top: 12px;
+            font-size: 0.8em;
+            color: #FFD700;
+            text-align: left;
+            line-height: 1.5;
+        }
     </style>
 </head>
 <body>
@@ -156,27 +193,48 @@
     <img src="https://i.postimg.cc/PrMHVjnp/the-bureau.gif" alt="Fond animé" />
 </div>
 
+<!-- CYBERPUNK BOUTON HAUT DROITE -->
+<div class="cyber-trigger" onclick="document.getElementById('cyberModal').classList.add('active')">
+    <img src="https://i.postimg.cc/4dWkYNVq/cyperpunk.png" alt="Info" />
+    <div class="cyber-trigger-label">ℹ️ Info</div>
+</div>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="cyberModal">
+    <div class="modal-box">
+        <button class="modal-close" onclick="document.getElementById('cyberModal').classList.remove('active')">✕</button>
+        <div class="modal-dame">
+            <img src="https://i.postimg.cc/4dWkYNVq/cyperpunk.png" alt="Cyberpunk" />
+            <div class="modal-dame-title">💬 Un mot d'AnoPepUs</div>
+        </div>
+        <div class="modal-content">
+            <p>🐘 <strong>Reste au courant</strong> des dernières cryptos mises en ligne en suivant <a href="https://mastodon.social/@AnoPepUs" target="_blank">AnoPepUs sur Mastodon</a>.</p>
+            <p>📊 <strong>Suis Crypto Yoda</strong> sur <a href="https://www.dailymotion.com/user/AnoPepUs" target="_blank">Dailymotion</a> qui te donne quotidiennement les indicateurs de BTC et ETH.</p>
+            <p>🛠️ Tu as remarqué que ces sites n'utilisent pas les GAFAM, mais uniquement des outils <strong>gratuits et open-source</strong>.</p>
+            <div class="modal-highlight">
+                💛 La moitié des récompenses que AnoPepUs reçoit sont redistribuées à ces communautés open-source.
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="container">
     <h1 class="title">✨ AnoPepUs ✨</h1>
     <h2 class="subtitle">🦋 Merci pour votre soutien !</h2>
 
     <div class="content">
-
         <div class="left-panel">
             <div class="text-section">
                 <p><span class="highlight">✨ MERCI POUR VOTRE BASIC ATTENTION TOKEN !</span></p>
                 <p>Bienvenue dans l'univers d'Anopepus !</p>
-                <p>Je suis ce créateur un peu fou qui t'explique la crypto sans te prendre la tête,
-                et qui t'envoie chasser des trésors numériques aux quatre coins du globe.</p>
+                <p>Je suis ce créateur un peu fou qui t'explique la crypto sans te prendre la tête, et qui t'envoie chasser des trésors numériques aux quatre coins du globe.</p>
                 <p>Entre deux énigmes et trois bougies japonaises, je survis grâce à votre soutien. 😄</p>
                 <p>Chaque BAT reçu finance la prochaine énigme... ou mon café. Probablement les deux. ☕🗺️</p>
             </div>
-
             <div class="bat-row">
                 <img src="https://i.postimg.cc/hjbFg0P8/bat_logo.png" class="bat-logo" />
                 <span class="bat-text">👆 Clique sur le logo BAT<br>dans ta barre Brave pour soutenir !</span>
             </div>
-
             <a href="https://publishers.basicattentiontoken.org/c/ud1qYZmcWy" target="_blank" class="button-brave">
                 <img src="https://i.postimg.cc/RF9z4StX/Brave.png" alt="Brave" />
                 🦁 Faire un don via Brave Creators
@@ -194,7 +252,6 @@
                     <span>🗺️ Retour à<br>Chasse-au-trésor</span>
                 </a>
             </div>
-
             <div class="screens-section">
                 <div class="screen-wrapper">
                     <div class="screen-frame">
@@ -206,7 +263,6 @@
                     <div class="screen-base"></div>
                     <div class="screen-label">DailyMotion</div>
                 </div>
-
                 <div class="screen-wrapper">
                     <div class="screen-frame">
                         <a href="https://mastodon.social/@AnoPepUs" target="_blank">
@@ -219,7 +275,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 </div>
 

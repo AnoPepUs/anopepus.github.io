@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dangers GAFAM - AnoPepUs</title>
+  <link rel="shortcut icon" href="https://i.postimg.cc/hjbFg0P8/bat_logo.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --red: #FF4444;
+      --red-bg: rgba(255,68,68,0.08);
+      --red-border: rgba(255,68,68,0.35);
+      --gold: #FFD700;
+      --gold-bg: rgba(255,215,0,0.07);
+      --gold-border: rgba(255,215,0,0.35);
+      --green: #6FCF97;
+      --green-bg: rgba(111,207,151,0.08);
+      --green-border: rgba(111,207,151,0.35);
+      --card-bg: rgba(0,0,0,0.55);
+      --card-border: rgba(255,255,255,0.12);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; padding: 0;
+      background: url("https://i.postimg.cc/PrMHVjnp/the-bureau.gif") no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Exo 2', Arial, sans-serif;
+      color: white;
+    }
+    .overlay {
+      min-height: 100vh;
+      background: rgba(0,0,0,0.75);
+      padding: 40px 20px 60px;
+    }
+
+    /* HEADER */
+    .page-header {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 40px;
+    }
+    .cyber-header-img {
+      width: 100px;
+      border-radius: 50%;
+      border: 3px solid var(--red);
+      box-shadow: 0 0 20px rgba(255,68,68,0.5);
+      margin-bottom: 16px;
+      animation: pulse-red 2s infinite;
+    }
+    @keyframes pulse-red {
+      0%,100% { box-shadow: 0 0 20px rgba(255,68,68,0.5); }
+      50% { box-shadow: 0 0 35px rgba(255,68,68,0.9); }
+    }
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.8em;
+      color: var(--red);
+      text-shadow: 0 0 20px rgba(255,68,68,0.6);
+      letter-spacing: 2px;
+      margin: 0 0 8px;
+    }
+    .page-sub {
+      color: #aaa;
+      font-size: 0.95em;
+      font-style: italic;
+    }
+
+    /* CONTENU */
+    .content {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    /* STAT BOX */
+    .stat-box {
+      background: var(--red-bg);
+      border: 2px solid var(--red-border);
+      border-radius: 14px;
+      padding: 22px 24px;
+      margin-bottom: 28px;
+      text-align: center;
+    }
+    .stat-box .big-number {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.5em;
+      color: var(--red);
+      text-shadow: 0 0 15px rgba(255,68,68,0.7);
+      display: block;
+      margin: 8px 0 4px;
+    }
+    .stat-box .stat-label { font-size: 0.9em; color: #ccc; }
+    .stat-source { font-size: 0.75em; color: #777; margin-top: 8px; font-style: italic; }
+
+    /* INTRO */
+    .intro-block {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-bottom: 28px;
+      font-size: 1em;
+      line-height: 1.8;
+      color: #ddd;
+    }
+    .intro-block .big-q {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.1em;
+      color: var(--gold);
+      text-align: center;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--gold-border);
+    }
+
+    /* GAFAM CARDS */
+    .gafam-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      margin-bottom: 24px;
+      overflow: hidden;
+      transition: border-color 0.3s;
+    }
+    .gafam-card:hover { border-color: var(--red); }
+    .gafam-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 20px;
+      background: rgba(255,68,68,0.06);
+      border-bottom: 1px solid var(--red-border);
+    }
+    .gafam-emoji { font-size: 2em; flex-shrink: 0; }
+    .gafam-name {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1em;
+      color: var(--red);
+      margin: 0;
+    }
+    .gafam-tagline { font-size: 0.82em; color: #aaa; margin: 2px 0 0; font-style: italic; }
+    .gafam-body { padding: 18px 20px; }
+    .gafam-body p { margin: 0 0 12px; font-size: 0.9em; line-height: 1.7; color: #ccc; }
+    .gafam-body p:last-child { margin-bottom: 0; }
+
+    .case-block {
+      background: var(--red-bg);
+      border-left: 3px solid var(--red);
+      border-radius: 0 8px 8px 0;
+      padding: 10px 14px;
+      margin: 12px 0;
+      font-size: 0.87em;
+      color: #ddd;
+      line-height: 1.6;
+    }
+    .case-block strong { color: var(--red); }
+    .case-block.gold {
+      background: var(--gold-bg);
+      border-left-color: var(--gold);
+    }
+    .case-block.gold strong { color: var(--gold); }
+
+    .humor {
+      background: rgba(255,215,0,0.06);
+      border: 1px dashed rgba(255,215,0,0.3);
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 0.87em;
+      color: var(--gold);
+      margin: 12px 0;
+      font-style: italic;
+    }
+    .humor::before { content: "😄 "; }
+
+    /* SOLUTION */
+    .solution-box {
+      background: var(--green-bg);
+      border: 2px solid var(--green-border);
+      border-radius: 14px;
+      padding: 22px 24px;
+      margin-top: 36px;
+    }
+    .solution-box h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1em;
+      color: var(--green);
+      margin: 0 0 16px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--green-border);
+      text-align: center;
+    }
+    .alt-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .alt-item {
+      background: rgba(0,0,0,0.4);
+      border: 1px solid var(--green-border);
+      border-radius: 10px;
+      padding: 12px 14px;
+      font-size: 0.87em;
+      line-height: 1.5;
+    }
+    .alt-item .alt-title { color: var(--green); font-weight: 700; margin-bottom: 4px; display: block; }
+    .alt-item .alt-sub { color: #999; font-size: 0.9em; }
+
+    /* FOOTER LINKS */
+    .back-links {
+      text-align: center;
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .btn-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      background: rgba(0,0,0,0.6);
+      border: 1px solid var(--gold);
+      border-radius: 8px;
+      color: var(--gold);
+      text-decoration: none;
+      font-size: 0.88em;
+      font-weight: 600;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .btn-back:hover { background: rgba(255,215,0,0.1); transform: translateY(-2px); }
+    .btn-back img { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--gold); }
+
+    .page-footer { text-align: center; color: rgba(255,255,255,0.3); font-size: 0.78em; margin-top: 40px; }
+    hr.divider { border: none; border-top: 1px solid rgba(255,68,68,0.2); margin: 30px 0; }
+    a { color: var(--gold); }
+    a:hover { color: white; }
+  </style>
+</head>
+<body>
+<div class="overlay">
+
+  <div class="page-header">
+    <img src="https://i.postimg.cc/4dWkYNVq/cyperpunk.png" class="cyber-header-img" alt="Cyberpunk">
+    <h1>🚨 GAFAM : Ils te sourient...<br>et ils vendent ta vie</h1>
+    <p class="page-sub">Google · Apple · Facebook · Amazon · Microsoft — Le vrai modèle économique derrière la "gratuité"</p>
+  </div>
+
+  <div class="content">
+
+    <!-- STAT -->
+    <div class="stat-box">
+      <div class="big-q">💰 Comment des boîtes qui te donnent tout "gratuitement" sont-elles les plus riches de la planète ?</div>
+      <span class="big-number">~280 Milliards $</span>
+      <div class="stat-label">C'est la taille du marché mondial de la vente de données personnelles en 2024</div>
+      <div class="stat-source">Sources : Grand View Research, Market Research Future, 2024 — le produit qu'ils vendent, c'est <strong style="color:var(--red)">TOI</strong>.</div>
+    </div>
+
+    <!-- INTRO -->
+    <div class="intro-block">
+      <div class="big-q">🤔 "J'ai rien à cacher..." — Le classique</div>
+      <p>C'est l'argument qu'on entend tout le temps. Et on le comprend. Sauf que le problème n'est pas ce que <em>tu</em> veux cacher — c'est ce que <em>les autres</em> peuvent faire de ce qu'ils savent sur toi.</p>
+      <p>Une donnée anodine aujourd'hui peut devenir une arme demain. Selon qui est aux commandes. Et l'histoire récente montre que "impossible" peut devenir réalité très vite.</p>
+    </div>
+
+    <!-- GOOGLE -->
+    <div class="gafam-card">
+      <div class="gafam-header">
+        <div class="gafam-emoji">🔍</div>
+        <div>
+          <div class="gafam-name">GOOGLE</div>
+          <div class="gafam-tagline">"Ne sois pas mauvais" — leur ancienne devise. Spoiler : ça a changé.</div>
+        </div>
+      </div>
+      <div class="gafam-body">
+        <p>Tu googles "symptômes cancer du pancréas" à 2h du matin parce que t'as mal au ventre. Ça te regarde, non ? Sauf que Google enregistre tout : cette recherche, ton âge, ta localisation, ton historique médical sur 10 ans. Ces données finissent chez des <strong style="color:white">data brokers</strong>, qui les revendent à des assureurs.</p>
+        <div class="case-block"><strong>📌 Cas réel :</strong> Aux États-Unis, des assureurs utilisent des données comportementales achetées à des tiers pour ajuster les primes. Une étude de la FTC (2024) a confirmé que des data brokers vendent des listes de personnes ayant effectué des recherches sur des maladies chroniques à des entreprises d'assurance. Sans que tu le saches. Sans que tu puisses t'y opposer.</div>
+        <div class="humor">Tu cherches "comment perdre du poids" → demain tu reçois une pub pour Weight Watchers. Tu cherches "symptômes dépression" → après-demain, ton assurance révise ta prime. Bienvenue dans le futur !</div>
+        <p>Et Google Maps ? Il sait où tu travailles, où tu dors, où tu vas le week-end, quels médecins tu fréquentes... Ce n'est pas un GPS, c'est un traceur.</p>
+      </div>
+    </div>
+
+    <!-- FACEBOOK -->
+    <div class="gafam-card">
+      <div class="gafam-header">
+        <div class="gafam-emoji">👤</div>
+        <div>
+          <div class="gafam-name">FACEBOOK / META</div>
+          <div class="gafam-tagline">Connecter le monde... et le surveiller.</div>
+        </div>
+      </div>
+      <div class="gafam-body">
+        <p>En 2016, <strong style="color:white">Cambridge Analytica</strong> a utilisé les données de <strong style="color:var(--red)">87 millions de profils Facebook</strong> — sans leur consentement — pour construire des profils psychologiques ultra-précis et influencer les élections américaines et le Brexit. Meta a payé une amende de 5 milliards de dollars. Ce qui représente environ 3 semaines de bénéfices. Autant dire une tape sur les doigts.</p>
+        <div class="case-block"><strong>📌 USA 2026 — C'est déjà en place :</strong> Depuis février 2026, tout voyageur entrant aux États-Unis via l'ESTA doit déclarer ses comptes de réseaux sociaux des 5 dernières années. Facebook, Instagram, TikTok, X... Des Européens ont déjà été refoulés à la frontière après que des agents ont jugé leur activité en ligne "trop critique" du gouvernement américain.</div>
+        <div class="humor">Tu sais, ce type qui trempe la tête tous les matins dans un saladier de carottes râpées à la tête de la première puissance mondiale ? Il veut voir ton Facebook avant de te laisser entrer chez lui. Bienvenue au pays de la liberté !</div>
+        <p>Et ce n'est pas "que" les USA. La Chine, la Russie, plusieurs régimes autoritaires utilisent déjà les données des réseaux sociaux pour identifier les opposants. Ce qui est impensable aujourd'hui peut être réalité demain — selon qui prend le pouvoir.</p>
+      </div>
+    </div>
+
+    <!-- AMAZON -->
+    <div class="gafam-card">
+      <div class="gafam-header">
+        <div class="gafam-emoji">📦</div>
+        <div>
+          <div class="gafam-name">AMAZON</div>
+          <div class="gafam-tagline">Le sourire dans le logo cache bien des choses.</div>
+        </div>
+      </div>
+      <div class="gafam-body">
+        <p>Amazon sait exactement ce que tu achètes, quand, à quelle heure, avec quelle régularité. Ces données sont précieuses. Amazon les vend à des partenaires commerciaux — dont certains sont des employeurs, des assureurs, des banques.</p>
+        <div class="case-block"><strong>📌 Le godemiché et le licenciement :</strong> Imagine. Tu commandes un sextoy un mardi soir. Ton patron ne le sait pas... aujourd'hui. Mais si demain son service RH achète un rapport de profil comportemental à un data broker lié à Amazon ? Et s'il n'aime pas les homosexuels — ou simplement les gens qui ont une vie privée un peu trop "différente" ? Tu te retrouves licencié pour "restructuration". Légalement. Sans recours. Sans preuve.</div>
+        <div class="case-block gold"><strong>📌 Cas réel — IA discriminante :</strong> En 2018, Amazon a dû abandonner son outil d'IA de recrutement interne parce qu'il <strong style="color:var(--gold)">discriminait automatiquement les femmes</strong> — il avait appris sur 10 ans d'historique de recrutement majoritairement masculin. Combien d'outils similaires tournent encore dans d'autres entreprises, en silence ?</div>
+        <div class="humor">Alexa écoute en permanence dans ton salon. Elle dit que c'est pour "améliorer le service". Bien sûr. Et ton frigo connecté Samsung aussi. À ce rythme, même ta cafetière a un casier judiciaire.</div>
+      </div>
+    </div>
+
+    <!-- APPLE -->
+    <div class="gafam-card">
+      <div class="gafam-header">
+        <div class="gafam-emoji">🍎</div>
+        <div>
+          <div class="gafam-name">APPLE</div>
+          <div class="gafam-tagline">"Privacy. That's iPhone." — et aussi, selon les marchés.</div>
+        </div>
+      </div>
+      <div class="gafam-body">
+        <p>Apple se présente comme le champion de la vie privée. C'est leur argument marketing numéro un. Sauf que...</p>
+        <div class="case-block"><strong>📌 La Chine :</strong> En Chine, Apple a supprimé des centaines d'applications VPN de son App Store sur demande du gouvernement chinois. Les données des utilisateurs chinois sont stockées sur des serveurs contrôlés par l'État chinois. La vie privée, c'est selon les marchés — et selon le chiffre d'affaires.</div>
+        <div class="case-block"><strong>📌 CSAM (2021) :</strong> Apple a annoncé vouloir scanner tous les iPhones pour détecter des images illégales — ce qui implique d'avoir accès à toutes tes photos. Face au tollé mondial, ils ont reculé. Pour l'instant. La technologie existe, le projet aussi.</div>
+        <div class="humor">Apple dit que tes données sont privées. Sauf en Chine. Sauf quand le gouvernement demande. Sauf pour améliorer Siri. Sauf pour la pub ciblée. Sauf pour... bon, t'as compris.</div>
+      </div>
+    </div>
+
+    <!-- MICROSOFT -->
+    <div class="gafam-card">
+      <div class="gafam-header">
+        <div class="gafam-emoji">🪟</div>
+        <div>
+          <div class="gafam-name">MICROSOFT</div>
+          <div class="gafam-tagline">Ton bureau est une fenêtre ouverte.</div>
+        </div>
+      </div>
+      <div class="gafam-body">
+        <p>Windows 10 et 11 collectent par défaut : tes frappes clavier, tes habitudes de navigation, tes applications ouvertes, ta localisation, tes contacts... Tout ça part chez Microsoft. Et Copilot, leur IA intégrée à Office, analyse désormais le contenu de tes documents professionnels en temps réel.</p>
+        <div class="case-block"><strong>📌 Le Cloud Act :</strong> Une loi américaine oblige toutes les entreprises US à fournir les données de leurs serveurs au gouvernement américain sur simple demande — même si ces serveurs sont en Europe. En 2023, la Commission européenne a interdit à ses propres employés d'utiliser Microsoft 365 pour les documents sensibles pour cette raison exacte.</div>
+        <div class="case-block gold"><strong>📌 Recall (2024) :</strong> Microsoft a voulu lancer "Recall", une fonction qui fait des captures d'écran de tout ce que tu fais toutes les quelques secondes pour que l'IA puisse "te souvenir de tout". Après un scandale international, ils ont rendu la fonctionnalité optionnelle. Mais elle est là, dans le code, prête.</div>
+        <div class="humor">Microsoft veut que son IA se souvienne de tout ce que tu fais sur ton PC. Toutes les 3 secondes. C'est pratique si tu cherches un document. Moins pratique si tu cherches... autre chose.</div>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- SOLUTION -->
+    <div class="solution-box">
+      <h2>🛡️ Quelques alternatives simples — sans sacrifier le confort</h2>
+      <p style="text-align:center; color:#bbb; font-size:0.88em; margin-bottom:16px;">Pas besoin de tout changer d'un coup. Quelques gestes simples suffisent.</p>
+      <div class="alt-grid">
+        <div class="alt-item">
+          <span class="alt-title">🦁 Brave Browser</span>
+          <span class="alt-sub">Au lieu de Chrome<br>→ Zéro tracking, gagne du BAT en bonus</span>
+        </div>
+        <div class="alt-item">
+          <span class="alt-title">🔍 DuckDuckGo</span>
+          <span class="alt-sub">Au lieu de Google Search<br>→ Aucun profil créé, résultats pertinents</span>
+        </div>
+        <div class="alt-item">
+          <span class="alt-title">🐘 Mastodon</span>
+          <span class="alt-sub">Au lieu de Twitter/X ou Facebook<br>→ Décentralisé, open-source, personne ne vend tes données</span>
+        </div>
+        <div class="alt-item">
+          <span class="alt-title">📹 Dailymotion / PeerTube</span>
+          <span class="alt-sub">Au lieu de YouTube<br>→ Pas de tracking publicitaire invasif</span>
+        </div>
+        <div class="alt-item">
+          <span class="alt-title">📧 ProtonMail</span>
+          <span class="alt-sub">Au lieu de Gmail<br>→ Chiffré de bout en bout, serveurs en Suisse</span>
+        </div>
+        <div class="alt-item">
+          <span class="alt-title">🔒 Signal</span>
+          <span class="alt-sub">Au lieu de WhatsApp<br>→ Open-source, chiffrement total, pas de Meta</span>
+        </div>
+      </div>
+      <p style="text-align:center; color:#777; font-size:0.8em; margin-top:18px; font-style:italic;">Ce site lui-même n'utilise aucun outil GAFAM. Tout est open-source et gratuit.<br>La moitié des récompenses BAT reçues par AnoPepUs sont redistribuées à ces communautés.</p>
+    </div>
+
+    <!-- BACK LINKS -->
+    <div class="back-links">
+      <a href="https://anopepus.github.io/" class="btn-back">
+        <img src="https://i.postimg.cc/hjbFg0P8/bat_logo.png" alt="Récompense">
+        ← Page Récompense
+      </a>
+      <a href="https://anopepus.github.io/Crypto-pour-les-Nuls/" class="btn-back">
+        <img src="https://i.postimg.cc/qMC792VP/papillon.gif" alt="Crypto">
+        📚 Crypto pour les Nuls
+      </a>
+      <a href="https://anopepus.github.io/Chasse-au-tresor/" class="btn-back">
+        <img src="https://i.postimg.cc/1XLDzBGs/terre_tourne.gif" alt="Trésor">
+        🗺️ Chasse au Trésor
+      </a>
+    </div>
+
+    <div class="page-footer">
+      AnoPepUs · Contenu éducatif · Sources : Grand View Research, FTC, Reuters, Commission Européenne, 2024-2026
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
