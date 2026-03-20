@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manifeste - AnoPepUs</title>
+  <link rel="shortcut icon" href="https://i.postimg.cc/hjbFg0P8/bat_logo.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gold: #FFD700;
+      --gold-bg: rgba(255,215,0,0.07);
+      --gold-border: rgba(255,215,0,0.35);
+      --blue: #6FA8DC;
+      --red: #FF4444;
+      --card-bg: rgba(0,0,0,0.55);
+      --card-border: rgba(255,255,255,0.1);
+      --green: #6FCF97;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; padding: 0;
+      background: url("https://i.postimg.cc/PrMHVjnp/the-bureau.gif") no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Exo 2', Arial, sans-serif;
+      color: white;
+    }
+    .overlay {
+      min-height: 100vh;
+      background: rgba(0,0,0,0.78);
+      padding: 50px 20px 70px;
+    }
+
+    /* HEADER */
+    .page-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 50px;
+    }
+    .yoda-img {
+      width: 110px;
+      border-radius: 50%;
+      border: 3px solid var(--gold);
+      box-shadow: 0 0 25px rgba(255,215,0,0.4);
+      margin-bottom: 18px;
+      animation: float 4s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.7em;
+      color: var(--gold);
+      text-shadow: 0 0 18px rgba(255,215,0,0.5);
+      letter-spacing: 2px;
+      margin: 0 0 8px;
+    }
+    .page-sub {
+      color: #aaa;
+      font-size: 0.92em;
+      font-style: italic;
+      margin: 0;
+    }
+
+    /* CONTENU */
+    .content {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    /* IDENTITÉ */
+    .identity-box {
+      background: var(--gold-bg);
+      border: 2px solid var(--gold-border);
+      border-radius: 16px;
+      padding: 26px 28px;
+      margin-bottom: 32px;
+      position: relative;
+      overflow: hidden;
+    }
+    .identity-box::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+    .identity-box h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.95em;
+      color: var(--gold);
+      margin: 0 0 18px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--gold-border);
+      text-align: center;
+      letter-spacing: 1px;
+    }
+    .pseudo-decode {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 18px;
+    }
+    .pseudo-part {
+      background: rgba(0,0,0,0.4);
+      border: 1px solid var(--gold-border);
+      border-radius: 10px;
+      padding: 14px 20px;
+      text-align: center;
+      flex: 1;
+      min-width: 160px;
+    }
+    .pseudo-part .big { font-family: 'Orbitron', sans-serif; font-size: 1.5em; color: var(--gold); display: block; margin-bottom: 6px; }
+    .pseudo-part .meaning { font-size: 0.85em; color: #ccc; line-height: 1.5; }
+    .identity-box p { font-size: 0.9em; color: #ccc; line-height: 1.7; margin: 8px 0; text-align: center; font-style: italic; }
+
+    /* SECTIONS */
+    .section {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 22px 24px;
+      margin-bottom: 24px;
+      line-height: 1.75;
+    }
+    .section h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.92em;
+      color: var(--gold);
+      margin: 0 0 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--gold-border);
+      letter-spacing: 1px;
+    }
+    .section p { font-size: 0.9em; color: #ccc; margin: 0 0 10px; }
+    .section p:last-child { margin-bottom: 0; }
+    .section strong { color: white; }
+
+    .quote {
+      background: var(--gold-bg);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 10px 10px 0;
+      padding: 12px 16px;
+      margin: 14px 0;
+      font-size: 0.88em;
+      color: var(--gold);
+      font-style: italic;
+      line-height: 1.6;
+    }
+
+    .fact-block {
+      background: rgba(255,68,68,0.07);
+      border-left: 3px solid var(--red);
+      border-radius: 0 8px 8px 0;
+      padding: 10px 14px;
+      margin: 12px 0;
+      font-size: 0.87em;
+      color: #ddd;
+      line-height: 1.6;
+    }
+    .fact-block strong { color: var(--red); }
+
+    .good-block {
+      background: rgba(111,207,151,0.07);
+      border-left: 3px solid var(--green);
+      border-radius: 0 8px 8px 0;
+      padding: 10px 14px;
+      margin: 12px 0;
+      font-size: 0.87em;
+      color: #ddd;
+      line-height: 1.6;
+    }
+    .good-block strong { color: var(--green); }
+
+    /* VALEURS */
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .value-card {
+      background: rgba(0,0,0,0.45);
+      border: 1px solid var(--gold-border);
+      border-radius: 10px;
+      padding: 14px 16px;
+      text-align: center;
+      transition: border-color 0.3s, transform 0.2s;
+    }
+    .value-card:hover { border-color: var(--gold); transform: translateY(-2px); }
+    .value-card .icon { font-size: 1.8em; display: block; margin-bottom: 6px; }
+    .value-card .vtitle { font-family: 'Orbitron', sans-serif; font-size: 0.75em; color: var(--gold); display: block; margin-bottom: 4px; }
+    .value-card .vdesc { font-size: 0.8em; color: #aaa; line-height: 1.4; }
+
+    /* FINAL */
+    .final-box {
+      background: linear-gradient(135deg, rgba(255,215,0,0.06), rgba(0,0,0,0.6));
+      border: 2px solid var(--gold-border);
+      border-radius: 16px;
+      padding: 28px;
+      text-align: center;
+      margin-top: 36px;
+    }
+    .final-box .big-quote {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1em;
+      color: var(--gold);
+      text-shadow: 0 0 14px rgba(255,215,0,0.5);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    /* BACK LINKS */
+    .back-links {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+    .btn-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      background: rgba(0,0,0,0.6);
+      border: 1px solid var(--gold);
+      border-radius: 8px;
+      color: var(--gold);
+      text-decoration: none;
+      font-size: 0.85em;
+      font-weight: 600;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .btn-back:hover { background: rgba(255,215,0,0.1); transform: translateY(-2px); }
+    .btn-back img { width: 26px; height: 26px; border-radius: 50%; border: 1px solid var(--gold); }
+
+    .page-footer { text-align: center; color: rgba(255,255,255,0.25); font-size: 0.78em; margin-top: 40px; }
+    hr.divider { border: none; border-top: 1px solid rgba(255,215,0,0.15); margin: 28px 0; }
+    a { color: var(--gold); } a:hover { color: white; }
+  </style>
+</head>
+<body>
+<div class="overlay">
+
+  <div class="page-header">
+    <img src="https://i.postimg.cc/4dWkYNVq/cyperpunk.png" class="yoda-img" alt="AnoPepUs">
+    <h1>🧙 Qui est AnoPepUs ?</h1>
+    <p class="page-sub">Un manifeste honnête — et un peu impertinent — d'un type qui a décidé de ne plus subir.</p>
+  </div>
+
+  <div class="content">
+
+    <!-- IDENTITÉ -->
+    <div class="identity-box">
+      <h2>🔐 Le Pseudonyme</h2>
+      <div class="pseudo-decode">
+        <div class="pseudo-part">
+          <span class="big">ANO</span>
+          <span class="meaning"><strong style="color:var(--gold)">Anonyme</strong><br>Pas par honte.<br>Par principe.<br>Ma vie privée m'appartient.</span>
+        </div>
+        <div class="pseudo-part">
+          <span class="big">PEPUS</span>
+          <span class="meaning"><strong style="color:var(--gold)">Surnom perso</strong><br>Le petit nom que<br>mes proches me donnent.<br>Un peu d'humanité.</span>
+        </div>
+      </div>
+      <p>Un anonyme avec un surnom affectueux. Un inconnu qui te parle franchement. C'est tout AnoPepUs.</p>
+    </div>
+
+    <!-- QUI JE SUIS -->
+    <div class="section">
+      <h2>👤 Qui je suis vraiment</h2>
+      <p>Je suis un type de plus de 50 ans. Pas un geek de naissance — j'ai appris sur le tas, par curiosité, par nécessité. Un peu informaticien par goût, beaucoup citoyen par conviction.</p>
+      <p>Je fais tourner un vieux PC Ubuntu dans un placard. Je code du HTML le week-end. Je stake des ATOM le soir. Je lis les carnets de Satoshi Nakamoto comme d'autres lisent Montaigne.</p>
+      <p>Je ne suis pas milliardaire. Je ne veux pas l'être. Ce qui m'intéresse, c'est de <strong>protéger ce que j'ai gagné à la sueur de mon front</strong> — et d'essayer de comprendre le monde qui change autour de moi.</p>
+      <div class="quote">
+        "Je ne suis pas un expert. Je suis quelqu'un qui a fait des erreurs, qui a appris, et qui partage ce chemin avec toi. Ce site est fait par un Nul — mais un Nul qui réfléchit."
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- 2008 -->
+    <div class="section">
+      <h2>💥 2008 — Le déclic</h2>
+      <p>Tout a commencé en 2008. La crise financière mondiale. Les banques avaient joué au casino avec l'argent des gens — le tien, le mien — et quand elles ont perdu, c'est <strong>nous</strong> qui avons payé l'addition.</p>
+      <div class="fact-block">
+        <strong>Les faits :</strong> Les gouvernements américain et européen ont injecté des milliers de milliards pour sauver les banques. Pas les gens. Les banques. Les mêmes qui avaient créé la crise. Les dirigeants ont touché leurs bonus. Personne n'est allé en prison.
+      </div>
+      <p>C'est exactement en 2008, dans ce contexte de trahison institutionnelle, qu'un mystérieux Satoshi Nakamoto a publié le <em>Bitcoin whitepaper</em>. Une monnaie sans banque. Sans État. Sans intermédiaire qui peut bloquer tes fonds ou jouer avec ton épargne.</p>
+      <div class="quote">
+        "Ce n'est pas un hasard. Bitcoin n'est pas né dans un garage de Silicon Valley. Il est né d'une colère légitime contre un système qui avait trahi la confiance de millions de personnes."
+      </div>
+      <p>Je me souviens des images de Grèce au début des années 2000, puis en 2012 — des gens devant des distributeurs vides. Du Liban en 2020, où une femme a dû <strong>braquer sa propre banque</strong> avec une arme factice pour retirer son propre argent et payer les soins de sa sœur. Ces choses-là arrivent. Pas qu'ailleurs. Potentiellement partout.</p>
+    </div>
+
+    <!-- INFLATION -->
+    <div class="section">
+      <h2>🖨️ L'impression monétaire — Le vol silencieux</h2>
+      <p>Depuis 2008, les banques centrales ont imprimé des quantités de monnaie sans précédent dans l'histoire humaine.</p>
+      <div class="fact-block">
+        <strong>2008-2014 :</strong> ~4 000 milliards de dollars imprimés aux USA + ~4 000 milliards d'euros en Europe.<br>
+        <strong>Covid 2020 :</strong> ~3 000 milliards de dollars supplémentaires + ~2 000 milliards d'euros.<br>
+        <strong>Résultat :</strong> L'argent que tu avais épargné vaut mécaniquement moins. Chaque année. Sans que tu aies rien fait de mal.
+      </div>
+      <p>Ce n'est pas un complot. C'est de la mécanique simple : plus il y a de billets en circulation, moins chacun vaut. <strong>Le Bitcoin, lui, sera limité à 21 millions d'unités. Pas un de plus. Jamais.</strong> Ce n'est pas une promesse politique. C'est du code. Immuable.</p>
+      <div class="quote">
+        "Ils nous emmerdent avec leur impression monétaire. Le Bitcoin, lui, il y en aura 21 millions, pas un de plus. Pas comme le papier toilette qu'on a dans nos poches."
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- LE FIL ROUGE -->
+    <div class="section">
+      <h2>🧵 Le fil rouge — Tout est lié</h2>
+      <p>Tu te demandes peut-être quel est le rapport entre la crypto, les GAFAM, l'open-source et Mastodon. C'est la même question, vue sous des angles différents :</p>
+      <div class="values-grid">
+        <div class="value-card">
+          <span class="icon">🏦</span>
+          <span class="vtitle">Banques centrales</span>
+          <span class="vdesc">Contrôlent ta monnaie. Peuvent la dévaluer. Peuvent bloquer tes fonds.</span>
+        </div>
+        <div class="value-card">
+          <span class="icon">📱</span>
+          <span class="vtitle">GAFAM</span>
+          <span class="vdesc">Contrôlent tes données. Peuvent te censurer. Vendent ta vie privée.</span>
+        </div>
+        <div class="value-card">
+          <span class="icon">🏛️</span>
+          <span class="vtitle">États autoritaires</span>
+          <span class="vdesc">Utilisent les deux pour surveiller, contrôler, réprimer.</span>
+        </div>
+        <div class="value-card">
+          <span class="icon">⛓️</span>
+          <span class="vtitle">Blockchain</span>
+          <span class="vdesc">Personne ne contrôle. Code immuable. Transparent pour tous.</span>
+        </div>
+        <div class="value-card">
+          <span class="icon">🛠️</span>
+          <span class="vtitle">Open-Source</span>
+          <span class="vdesc">Code auditable. Communauté. Pas d'actionnaire à enrichir.</span>
+        </div>
+        <div class="value-card">
+          <span class="icon">🐘</span>
+          <span class="vtitle">Décentralisation</span>
+          <span class="vdesc">Mastodon, PeerTube, Brave... le pouvoir revient aux utilisateurs.</span>
+        </div>
+      </div>
+      <p style="margin-top:16px;">Ce n'est pas une idéologie. Ce n'est pas de la paranoïa. C'est juste le refus de dépendre entièrement de structures qui ont montré qu'elles pouvaient se retourner contre toi.</p>
+      <div class="good-block">
+        <strong>Ce que je veux :</strong> Garder le contrôle de mon épargne. Garder le contrôle de mes données. Utiliser des outils qui n'ont pas d'intérêt financier à me manipuler. C'est aussi simple que ça.
+      </div>
+    </div>
+
+    <!-- POURQUOI CE SITE -->
+    <div class="section">
+      <h2>🌐 Pourquoi ce site ?</h2>
+      <p>Je ne suis pas là pour te vendre un rêve. Je ne suis pas influenceur. Je n'ai pas de code parrainage qui me rend riche. Ce site existe parce que j'aurais aimé qu'il existe quand j'ai commencé.</p>
+      <p>Trop de sites crypto sont soit <strong>trop techniques</strong> (tu comprends rien), soit <strong>trop commerciaux</strong> (ils veulent que tu achètes via leur lien). Moi je veux juste partager ce que j'ai appris, avec humour, honnêteté, et sans te prendre pour un idiot.</p>
+      <div class="quote">
+        "Ce site est fait avec des outils gratuits et open-source. Hébergé gratuitement sur GitHub. Aucune pub. Aucun tracking. Aucun GAFAM. La moitié des BAT reçus via Brave sont redistribués aux communautés open-source qui rendent tout cela possible."
+      </div>
+      <p>Si tu trouves ça utile — dis-le autour de toi. Si tu veux me soutenir — utilise Brave et clique sur le bouton BAT. Si tu veux juste passer du bon temps — pars chasser des trésors numériques aux quatre coins du globe.</p>
+      <p>Dans tous les cas : <strong>bienvenue dans l'univers d'AnoPepUs.</strong></p>
+    </div>
+
+    <!-- FINAL -->
+    <div class="final-box">
+      <div class="big-quote">
+        "Je reste persuadé que nous sommes au tout début d'une grande aventure<br>
+        qui va révolutionner le monde.<br>
+        Pas pour s'enrichir — pour se libérer."
+      </div>
+      <p style="color:#aaa; font-size:0.88em; margin-bottom:24px;">— AnoPepUs, quelque part sur internet, Ubuntu dans un placard 🐧</p>
+    </div>
+
+    <!-- BACK LINKS -->
+    <div class="back-links">
+      <a href="https://anopepus.github.io/" class="btn-back">
+        <img src="https://i.postimg.cc/hjbFg0P8/bat_logo.png" alt="Récompense">
+        ← Page Récompense
+      </a>
+      <a href="https://anopepus.github.io/dangers-gafam.html" class="btn-back">
+        🚨 STOP GAFAM
+      </a>
+      <a href="https://anopepus.github.io/Crypto-pour-les-Nuls/" class="btn-back">
+        <img src="https://i.postimg.cc/qMC792VP/papillon.gif" alt="Crypto">
+        Crypto pour les Nuls
+      </a>
+      <a href="https://anopepus.github.io/Chasse-au-tresor/" class="btn-back">
+        <img src="https://i.postimg.cc/1XLDzBGs/terre_tourne.gif" alt="Trésor">
+        Chasse au Trésor
+      </a>
+    </div>
+
+    <div class="page-footer">AnoPepUs · Fait avec 💛 open-source · Aucun GAFAM n'a été blessé lors de la création de ce site</div>
+
+  </div>
+</div>
+</body>
+</html>
