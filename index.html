@@ -79,7 +79,7 @@
         .screen-neck { width: 35px; height: 10px; background: #555; }
         .screen-base { width: 80px; height: 6px; background: #444; border-radius: 3px; }
         .screen-label { font-size: 0.7rem; color: #aaa; margin-top: 5px; }
-
+ 
         /* ===== CYBERPUNK BOUTONS ===== */
         .cyber-buttons-wrap {
             position: fixed;
@@ -91,7 +91,7 @@
             align-items: center;
             gap: 10px;
         }
-
+ 
         /* Bouton ℹ️ Info (existant) */
         .cyber-trigger {
             cursor: pointer;
@@ -117,7 +117,7 @@
             margin-top: 3px;
             text-shadow: 0 0 6px rgba(255,215,0,0.6);
         }
-
+ 
         /* Bouton STOP GAFAM */
         .gafam-trigger {
             cursor: pointer;
@@ -165,7 +165,7 @@
             0%   { transform: translateX(70px); }
             100% { transform: translateX(-100%); }
         }
-
+ 
         /* ===== MODAL ===== */
         .modal-overlay {
             display: none;
@@ -247,20 +247,74 @@
     </style>
 </head>
 <body>
-
+ 
 <div class="background">
     <img src="https://i.postimg.cc/PrMHVjnp/the-bureau.gif" alt="Fond animé" />
 </div>
-
+ 
+<!-- BOUTON MANIFESTE HAUT GAUCHE -->
+<a href="https://anopepus.github.io/manifeste.html" style="
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 500;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    transition: transform 0.3s;
+" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+    <img src="https://i.postimg.cc/4dWkYNVq/cyperpunk.png" style="
+        width: 60px; height: 60px;
+        border-radius: 50%;
+        border: 2px solid #FFD700;
+        box-shadow: 0 0 14px rgba(255,215,0,0.5);
+        object-fit: cover;
+        display: block;
+        animation: pulse-gold 3s infinite;
+    " alt="Manifeste" />
+    <div style="
+        width: 70px;
+        overflow: hidden;
+        margin-top: 4px;
+        background: rgba(255,215,0,0.12);
+        border: 1px solid rgba(255,215,0,0.4);
+        border-radius: 4px;
+        padding: 2px 0;
+    ">
+        <span style="
+            display: inline-block;
+            white-space: nowrap;
+            font-size: 0.58rem;
+            font-weight: 700;
+            color: #FFD700;
+            text-shadow: 0 0 6px rgba(255,215,0,0.8);
+            letter-spacing: 1px;
+            animation: ticker-left 3.5s linear infinite;
+        ">🧙 QUI SUIS-JE ? 🧙</span>
+    </div>
+</a>
+ 
+<style>
+@keyframes pulse-gold {
+    0%,100% { box-shadow: 0 0 14px rgba(255,215,0,0.5); }
+    50% { box-shadow: 0 0 26px rgba(255,215,0,0.9); }
+}
+@keyframes ticker-left {
+    0%   { transform: translateX(70px); }
+    100% { transform: translateX(-100%); }
+}
+</style>
+ 
 <!-- CYBERPUNK BOUTONS HAUT DROITE -->
 <div class="cyber-buttons-wrap">
-
+ 
   <!-- Bouton ℹ️ Info -->
   <div class="cyber-trigger" onclick="document.getElementById('cyberModal').classList.add('active')">
     <img src="https://i.postimg.cc/4dWkYNVq/cyperpunk.png" alt="Info" />
     <div class="cyber-trigger-label">ℹ️ Info</div>
   </div>
-
+ 
   <!-- Bouton STOP GAFAM -->
   <a href="https://anopepus.github.io/dangers-gafam.html" class="gafam-trigger">
     <img src="https://i.postimg.cc/4dWkYNVq/cyperpunk.png" alt="STOP GAFAM" />
@@ -268,9 +322,9 @@
       <span class="gafam-ticker">🚨 STOP GAFAM 🚨</span>
     </div>
   </a>
-
+ 
 </div>
-
+ 
 <!-- MODAL -->
 <div class="modal-overlay" id="cyberModal">
     <div class="modal-box">
@@ -289,11 +343,11 @@
         </div>
     </div>
 </div>
-
+ 
 <div class="container">
     <h1 class="title">✨ AnoPepUs ✨</h1>
     <h2 class="subtitle">🦋 Merci pour votre soutien !</h2>
-
+ 
     <div class="content">
         <div class="left-panel">
             <div class="text-section">
@@ -312,7 +366,7 @@
                 🦁 Faire un don via Brave Creators
             </a>
         </div>
-
+ 
         <div class="right-panel">
             <div class="nav-buttons">
                 <a href="https://anopepus.github.io/Crypto-pour-les-Nuls/" class="button-site">
@@ -349,6 +403,6 @@
         </div>
     </div>
 </div>
-
+ 
 </body>
 </html>
