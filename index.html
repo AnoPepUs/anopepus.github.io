@@ -80,14 +80,25 @@
         .screen-base { width: 80px; height: 6px; background: #444; border-radius: 3px; }
         .screen-label { font-size: 0.7rem; color: #aaa; margin-top: 5px; }
 
-        /* ===== CYBERPUNK BOUTON ===== */
-        .cyber-trigger {
+        /* ===== CYBERPUNK BOUTONS ===== */
+        .cyber-buttons-wrap {
             position: fixed;
-            top: 70px;
+            top: 15px;
             right: 15px;
             z-index: 500;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Bouton ℹ️ Info (existant) */
+        .cyber-trigger {
             cursor: pointer;
             transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         .cyber-trigger:hover { transform: scale(1.1); }
         .cyber-trigger img {
@@ -105,6 +116,54 @@
             text-align: center;
             margin-top: 3px;
             text-shadow: 0 0 6px rgba(255,215,0,0.6);
+        }
+
+        /* Bouton STOP GAFAM */
+        .gafam-trigger {
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+        .gafam-trigger:hover { transform: scale(1.1); }
+        .gafam-trigger img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 2px solid #FF4444;
+            box-shadow: 0 0 12px rgba(255,68,68,0.6);
+            object-fit: cover;
+            display: block;
+            animation: pulse-red 2s infinite;
+        }
+        @keyframes pulse-red {
+            0%,100% { box-shadow: 0 0 12px rgba(255,68,68,0.6); }
+            50% { box-shadow: 0 0 22px rgba(255,68,68,1); }
+        }
+        .gafam-ticker-wrap {
+            width: 70px;
+            overflow: hidden;
+            margin-top: 4px;
+            background: rgba(255,68,68,0.15);
+            border: 1px solid rgba(255,68,68,0.5);
+            border-radius: 4px;
+            padding: 2px 0;
+        }
+        .gafam-ticker {
+            display: inline-block;
+            white-space: nowrap;
+            font-size: 0.58rem;
+            font-weight: 700;
+            color: #FF4444;
+            text-shadow: 0 0 6px rgba(255,68,68,0.8);
+            letter-spacing: 1px;
+            animation: ticker 3s linear infinite;
+        }
+        @keyframes ticker {
+            0%   { transform: translateX(70px); }
+            100% { transform: translateX(-100%); }
         }
 
         /* ===== MODAL ===== */
@@ -193,10 +252,23 @@
     <img src="https://i.postimg.cc/PrMHVjnp/the-bureau.gif" alt="Fond animé" />
 </div>
 
-<!-- CYBERPUNK BOUTON HAUT DROITE -->
-<div class="cyber-trigger" onclick="document.getElementById('cyberModal').classList.add('active')">
+<!-- CYBERPUNK BOUTONS HAUT DROITE -->
+<div class="cyber-buttons-wrap">
+
+  <!-- Bouton ℹ️ Info -->
+  <div class="cyber-trigger" onclick="document.getElementById('cyberModal').classList.add('active')">
     <img src="https://i.postimg.cc/4dWkYNVq/cyperpunk.png" alt="Info" />
     <div class="cyber-trigger-label">ℹ️ Info</div>
+  </div>
+
+  <!-- Bouton STOP GAFAM -->
+  <a href="https://anopepus.github.io/dangers-gafam.html" class="gafam-trigger">
+    <img src="https://i.postimg.cc/4dWkYNVq/cyperpunk.png" alt="STOP GAFAM" />
+    <div class="gafam-ticker-wrap">
+      <span class="gafam-ticker">🚨 STOP GAFAM 🚨</span>
+    </div>
+  </a>
+
 </div>
 
 <!-- MODAL -->
